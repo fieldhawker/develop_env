@@ -1,0 +1,12 @@
+---
+- hosts: web_servers
+  connection: local
+  become: true
+  user: vagrant
+  roles:
+    - base
+    - nginx
+    - php
+#    - apache
+    - mariadb
+    - phpmyadmin
