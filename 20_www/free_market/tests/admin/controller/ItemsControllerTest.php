@@ -13,16 +13,16 @@ class ItemsControllerTest extends TestCase
      *
      * @return void
      */
-    public function testViewPage()
-    {
-//        // 未ログインはログイン画面にリダイレクト
-//        $this->visit('/admin/')->see('Admin Login');
+//    public function testViewPage()
+//    {
+////        // 未ログインはログイン画面にリダイレクト
+////        $this->visit('/admin/')->see('Admin Login');
+////
+////        // ログインしていたら管理画面を表示
+////        $this->withoutMiddleware();
+////        $this->visit('/admin/items')->see('商品一覧');
 //
-//        // ログインしていたら管理画面を表示
-//        $this->withoutMiddleware();
-//        $this->visit('/admin/items')->see('商品一覧');
-
-    }
+//    }
 
 
 }

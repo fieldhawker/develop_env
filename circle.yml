@@ -2,3 +2,8 @@ machine:
     timezone: Asia/Tokyo
 general:
   build_dir: 20_www/free_market
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: sepima

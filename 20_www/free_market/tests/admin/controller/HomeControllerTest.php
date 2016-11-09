@@ -13,8 +13,8 @@ class HomeControllerTest extends TestCase
      *
      * @return void
      */
-    public function testViewPage()
-    {
+//    public function testViewPage()
+//    {
 //        // 未ログインはログイン画面にリダイレクト
 //        $this->visit('/admin/')->see('Admin Login');
 //        $this->visit('/admin/login/')->see('Admin Login');
@@ -23,8 +23,8 @@ class HomeControllerTest extends TestCase
 //        // ログインしていたら管理画面を表示
 //        $this->withoutMiddleware();
 //        $this->visit('/admin/')->see('DashBoard');
-
-    }
+//
+//    }
 
 
 }
