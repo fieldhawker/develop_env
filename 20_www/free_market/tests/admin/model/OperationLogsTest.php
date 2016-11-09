@@ -104,73 +104,73 @@ class OperationLogsTest extends TestCase
 
         parent::setUp();
 
-        //artisanコマンドの実行
-        Artisan::call('migrate:refresh');
+//        //artisanコマンドの実行
+//        Artisan::call('migrate:refresh');
 
     }
 
-
-    /**
-     *
-     */
-    public function testValidateScreenNumber()
-    {
-
-        // 正常
-
-        foreach ($this->validateTrues as $input) {
-
-            $result = (new OperationLogs)->validate($input);
-
-            $this->assertTrue($result);
-
-        }
-
-        // 失敗
-        
-        foreach ($this->validateFalses as $input) {
-
-            $result = (new OperationLogs)->validate($input);
-
-            $this->assertFalse($result);
-
-        }
-
-    }
-    /**
-     *
-     */
-//    public function testRegisterGetId(){
 //
-//        $this->withoutMiddleware();
+//    /**
+//     *
+//     */
+//    public function testValidateScreenNumber()
+//    {
 //
-//        Factory::create('User', ['age' => 20]);
-//        Factory::create('User', ['age' => 30]);
+//        // 正常
 //
-//        $faker = Faker\Factory::create('ja_JP');
+//        foreach ($this->validateTrues as $input) {
+//
+//            $result = (new OperationLogs)->validate($input);
+//
+//            $this->assertTrue($result);
+//
+//        }
+//
+//        // 失敗
 //        
-//        $input["name"]     = 'テスト';
-//        $input["kana"]     = 'テスト';
-//        $input["email"]    = $faker->unique()->email;
-//        $input["password"] = 'password';
+//        foreach ($this->validateFalses as $input) {
 //
-//        $data = [
-//          'screen_number' => 110,
-//          'target_id'     => 10,
-//          'operator'      => 20,
-//          'comment'       => json_encode($input, JSON_UNESCAPED_UNICODE),
-//        ];
+//            $result = (new OperationLogs)->validate($input);
 //
-//        $oldest = (new User)->registerGetId($data);
+//            $this->assertFalse($result);
 //
-//        $this->assertEquals(30, $oldest->age);
-//
-//        $this->get('/api/users')
-//          ->seeJson([
-//            'email' => 'dev@se-project.co.jp',
-//          ]);
+//        }
 //
 //    }
+//    /**
+//     *
+//     */
+////    public function testRegisterGetId(){
+////
+////        $this->withoutMiddleware();
+////
+////        Factory::create('User', ['age' => 20]);
+////        Factory::create('User', ['age' => 30]);
+////
+////        $faker = Faker\Factory::create('ja_JP');
+////        
+////        $input["name"]     = 'テスト';
+////        $input["kana"]     = 'テスト';
+////        $input["email"]    = $faker->unique()->email;
+////        $input["password"] = 'password';
+////
+////        $data = [
+////          'screen_number' => 110,
+////          'target_id'     => 10,
+////          'operator'      => 20,
+////          'comment'       => json_encode($input, JSON_UNESCAPED_UNICODE),
+////        ];
+////
+////        $oldest = (new User)->registerGetId($data);
+////
+////        $this->assertEquals(30, $oldest->age);
+////
+////        $this->get('/api/users')
+////          ->seeJson([
+////            'email' => 'dev@se-project.co.jp',
+////          ]);
+////
+////    }
 
 
     /**
