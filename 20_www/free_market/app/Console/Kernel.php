@@ -27,5 +27,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+        $schedule->command('postinterestingarticle')
+          ->weekdays()->at('23:50');
+        
     }
 }
