@@ -7,3 +7,4 @@ deployment:
     branch: master
     heroku:
       appname: sepima
+    build_dir: api
