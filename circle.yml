@@ -1,0 +1,4 @@
+machine:
+    timezone: Asia/Tokyo
+general:
+  build_dir: 20_www/free_market
