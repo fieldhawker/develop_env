@@ -47,11 +47,11 @@ class PostInterestingArticle extends Command
      */
     public function handle()
     {
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // 記事の投稿
         $this->cl->postInterestingArticle();
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
     }
 }

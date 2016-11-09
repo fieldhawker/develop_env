@@ -37,7 +37,7 @@ class CybozuLiveService
     public function __construct()
     {
 
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         $this->cybozu = [
           'consumer_key'    => env('CYBOZULIVE_CONSUMER_KEY'),
@@ -49,7 +49,7 @@ class CybozuLiveService
           'x_auth_password' => env('CYBOZULIVE_PASSWORD'),
         ];
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
     }
 
     /**
@@ -148,7 +148,7 @@ class CybozuLiveService
     public function requestAccessToken()
     {
 
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         $consumer_key           = $this->cybozu["consumer_key"];
         $consumer_secret        = $this->cybozu["consumer_secret"];
@@ -197,7 +197,7 @@ class CybozuLiveService
 
         $this->setAccessTokenInfo($access_token_info);
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return true;
 
@@ -212,7 +212,7 @@ class CybozuLiveService
     public function requestGroupId()
     {
 
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // アクセストークンを取得
         $access_token_info = $this->getAccessTokenInfo();
@@ -272,7 +272,7 @@ class CybozuLiveService
 
         $this->setGroupId($group_id);
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return true;
     }
@@ -285,7 +285,7 @@ class CybozuLiveService
      */
     public function requestTopicId()
     {
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // アクセストークンを取得
         $access_token_info = $this->getAccessTokenInfo();
@@ -345,7 +345,7 @@ class CybozuLiveService
 
         $this->setTopicId($topic_id);
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return true;
     }
@@ -353,7 +353,7 @@ class CybozuLiveService
     public function postComment()
     {
 
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // アクセストークンを取得
         $access_token_info = $this->getAccessTokenInfo();
@@ -414,7 +414,7 @@ EOM;
             exit;
         }
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return true;
     }
@@ -427,7 +427,7 @@ EOM;
      */
     public function getInterestingArticle()
     {
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         $rss = $this->get_rss_url . time();
 
@@ -446,7 +446,7 @@ EOM;
 
         $this->setArticle($article);
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return true;
 

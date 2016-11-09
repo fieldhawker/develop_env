@@ -49,7 +49,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // ----------------------------
         // 会員情報をすべて取得する
@@ -57,7 +57,7 @@ class UsersController extends Controller
 
         $users = $this->users->findAll();
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return view('admin.users.index')->with('users', $users);
     }
@@ -69,13 +69,13 @@ class UsersController extends Controller
      */
     public function create()
     {
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // ----------------------------
         // 
         // ----------------------------
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return view('admin.users.create');
     }
@@ -89,7 +89,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // ----------------------------
         // リクエストパラメータを取得
@@ -107,7 +107,7 @@ class UsersController extends Controller
 
             Session::flash('message', self::MESSAGE_VALID_ERROR_END);
 
-            Log::info(Util::generateLogMessage('END 入力内容に不備がありました'));
+            Util::generateLogMessage('END 入力内容に不備がありました');
 
             return redirect('/admin/users/create/')
               ->with('user', $input)
@@ -124,7 +124,7 @@ class UsersController extends Controller
 
         if ($exception) {
 
-            Log::info(Util::generateLogMessage('END 会員の登録に失敗しました'));
+            Util::generateLogMessage('END 会員の登録に失敗しました');
 
             return $exception;
 
@@ -132,7 +132,7 @@ class UsersController extends Controller
 
         Session::flash('message', self::MESSAGE_REGISTER_END);
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return redirect('/admin/users');
 
@@ -149,7 +149,7 @@ class UsersController extends Controller
     public function show($id)
     {
 
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // ----------------------------
         // 会員情報をIDから検索する
@@ -165,13 +165,13 @@ class UsersController extends Controller
 
             Session::flash('message', self::MESSAGE_NOT_FOUND_END);
 
-            Log::info(Util::generateLogMessage('END 指定のIDの会員が存在しません'));
+            Util::generateLogMessage('END 指定のIDの会員が存在しません');
 
             return redirect('/admin/users');
 
         }
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         // ----------------------------
         //検索結果をビューに渡す
@@ -191,7 +191,7 @@ class UsersController extends Controller
     public function edit($id)
     {
 
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // ----------------------------
         // 会員情報をIDから検索する
@@ -205,7 +205,7 @@ class UsersController extends Controller
             // 見つからなかったら一覧に戻る
             // ----------------------------
 
-            Log::info(Util::generateLogMessage('END 指定のIDの会員が存在しません'));
+            Util::generateLogMessage('END 指定のIDの会員が存在しません');
 
             return redirect('/admin/users');
 
@@ -217,7 +217,7 @@ class UsersController extends Controller
 
         $is_exclusives = $this->users->isExpiredByOtherAdmin($id);
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         // ----------------------------
         //検索結果をビューに渡す
@@ -240,7 +240,7 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
 
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         // ----------------------------
         // リクエストパラメータを取得
@@ -262,7 +262,7 @@ class UsersController extends Controller
 
             Session::flash('message', self::MESSAGE_VALID_ERROR_END);
 
-            Log::info(Util::generateLogMessage('END 入力内容に不備がありました'));
+            Util::generateLogMessage('END 入力内容に不備がありました');
 
             return redirect($url)
               ->with('user', $input)
@@ -285,7 +285,7 @@ class UsersController extends Controller
 
             Session::flash('message', self::MESSAGE_NOT_FOUND_END);
 
-            Log::info(Util::generateLogMessage('END 指定のIDの会員が存在しません'));
+            Util::generateLogMessage('END 指定のIDの会員が存在しません');
 
             return redirect('/admin/users/');
 
@@ -315,7 +315,7 @@ class UsersController extends Controller
 
         if ($exception) {
 
-            Log::info(Util::generateLogMessage('END 会員の更新に失敗しました'));
+            Util::generateLogMessage('END 会員の更新に失敗しました');
 
             return $exception;
 
@@ -323,7 +323,7 @@ class UsersController extends Controller
 
         Session::flash('message', self::MESSAGE_UPDATE_END);
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return redirect('/admin/users');
 
@@ -336,7 +336,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        Log::info(Util::generateLogMessage('START'));
+        Util::generateLogMessage('START');
 
         Log::info('入力されたパラメータ', ['id' => $id]);
 
@@ -362,13 +362,13 @@ class UsersController extends Controller
 
         if ($exception) {
 
-            Log::info(Util::generateLogMessage('END 会員の削除に失敗しました'));
+            Util::generateLogMessage('END 会員の削除に失敗しました');
 
             return $exception;
 
         }
 
-        Log::info(Util::generateLogMessage('END'));
+        Util::generateLogMessage('END');
 
         return redirect()->to('/admin/users')->with('message', self::MESSAGE_DELETE_END);
 
