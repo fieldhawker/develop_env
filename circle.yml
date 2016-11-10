@@ -3,8 +3,12 @@ machine:
 general:
   build_dir: 20_www/free_market
 deployment:
-  staging:
+  sepima:
     branch: master
-    heroku:
-      appname: sepima
-    build_dir: api
+    commands:
+          - heroku maintenance:on --app sepima
+          - heroku scale worker=0 --app sepima
+          - cd .. && git push git@heroku.com:sepima.git master
+          - heroku maintenance:off --app sepima
+#    heroku:
+#      appname: sepima
