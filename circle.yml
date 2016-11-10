@@ -7,7 +7,7 @@ deployment:
     branch: master
     commands:
           - heroku maintenance:on --app sepima
-          - heroku scale worker=0 --app sepima
+#          - heroku scale worker=0 --app sepima
           - cd .. && git push git@heroku.com:sepima.git master
           - heroku maintenance:off --app sepima
 #    heroku:
