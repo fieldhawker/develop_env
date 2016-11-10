@@ -8,7 +8,7 @@ deployment:
     commands:
           - heroku maintenance:on --app sepima
 #          - heroku scale worker=0 --app sepima
-          - cd .. && git subtree push --prefix 20_www/free_market heroku master
+          - git subtree push --prefix 20_www/free_market heroku master
 #          - cd .. && git push git@heroku.com:sepima.git master
           - heroku maintenance:off --app sepima
 #    heroku:
