@@ -3,7 +3,7 @@ machine:
 general:
   build_dir: 20_www/free_market
 deployment:
-  sepima:
+  staging:
     branch: master
     commands:
           - heroku maintenance:on --app sepima
