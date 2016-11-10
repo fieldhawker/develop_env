@@ -7,9 +7,10 @@ deployment:
     branch: master
     commands:
           - heroku maintenance:on --app sepima
+          - git push git@heroku.com:sepima.git $CIRCLE_SHA1:master
 #          - heroku scale worker=0 --app sepima
 #          - git subtree push --prefix 20_www/free_market heroku master
-          - git push heroku `git subtree split --prefix 20_www/free_market https://github.com/fieldhawker/develop_env.git`:master
+#          - git push heroku `git subtree split --prefix 20_www/free_market https://github.com/fieldhawker/develop_env.git`:master
 #          - cd .. && git push git@heroku.com:sepima.git master
           - heroku maintenance:off --app sepima
 #    heroku:
